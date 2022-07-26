@@ -1,0 +1,247 @@
+<h1>Hola Listo </h1>
+<p>Por fin se logro chavos</p>
+<p>Version 1.1</p>
+
+
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+
+<!--Panel de color Azul-------------------------------------------------------------------------------------------->
+<div class="panel panel-info">
+	<div class=" panel-heading">
+
+		<!--Inicio de Encabezado con tamaño mayuscula con without-->
+		<h1 class="panel-without title">
+			Grupo Marro de Mexico, S.A de C.V. 
+		</h1>
+		<!--Fin de Encabezado con tamaño mayuscula con without-->
+
+		<!--Encabezado tamaño regular-->
+		<h1 class="panel-title">
+			Compromiso y Tecnologia al Servicio de nuestros clientes 
+		</h1>
+		<!--Fin de Encabezado tamaño regular-->
+
+		<!--Segmento para codificacion de fecha con nombre completo del mes-->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<script>
+				var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+				var f=new Date();
+				document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+			</script>
+		</div>
+		<!--Fin de Segmento para codificacion de fecha con nombre completo del mes-->
+	</div>
+</div>
+<!--Fin de Panel de color Azul----------------------------------------------------------------------------------------->
+
+
+<!--Panel de color Gris-------------------------------------------------------------------------------------------->
+<div class="panel panel-primary">
+	<div class=" panel-heading">
+		<!--Encabezado tamaño regular-->
+		<h2 class="panel-title">
+			Empleados GMM (Modulo de Permisos) - prueba piloto 1234..
+		</h2>
+		<!--Fin de Encabezado tamaño regular-->
+	</div>
+</div>
+<!--Fin de Panel de color Gris-------------------------------------------------------------------------------------------->
+
+<!--Encabezado 2D color Azul------------------------------->
+<div class="progress">
+    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		<span class="sr-only">100% Complete</span>
+		Nuevo Permiso gmm
+    </div>
+</div>
+<!--Fin de Encabezado 2D color Azul------------------------------->
+
+
+<!--Contenedor inicial o por default donde van todas etiquetas y cuandros de text------------------------------->
+<div class="container">
+	<div class="panel panel-default" ><!-- default significa contenedor color gris -->
+		<div class="panel-heading">
+
+			<div class="form-group row">
+
+				<!--Inicio de Etiqueta 1 y Cunadro de texto 1-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						No. Empleado
+					</label>
+					<input type="text" id="vl_Cod" name="vl_Cod"  class="form-contol" placeholder="Numero de Empleado" data-size="small" style="width:35%" />
+				</div>
+				<!--Fin de Etiqueta 1 y Cunadro de texto 1-->
+
+				<!--Inicio de Etiqueta para salto de espacio-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						.
+					</label>
+				</div>
+				<!--Fin de Etiqueta para salto de espacio-->
+
+				<!--Inicio de Etiqueta 2 y Cunadro de texto 2-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						Fecha
+					</label>
+					<input type="date" id="vl_fec" name="vl_fec"  class="form-contol" placeholder="" data-size="small" style="width:35%" />
+				</div>
+				<!--Fin de Etiqueta 2 y Cunadro de texto 2-->
+
+				<!--Inicio de Etiqueta 3 y Cunadro de texto 3--><!--Se agrego la funcion de suma automatica con onchange="SumarAutomatico(this.value);"-->
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						Inicio
+					</label>
+					<!--
+					<input type="text" id="vl_Inicio" name="vl_Inicio" placeholder="H:M AM/FM" onchange="SumarAutomatico(this.value);" />
+					-->
+					<!--
+					<input type="time" id="vl_Inicio" name="vl_Inicio"  class="form-contol" placeholder="H:M AM/FM" data-size="small" style="width:35%" onchange="SumarAutomatico(this.value);" />
+					-->
+					<input type="time" id="vl_Inicio" name="vl_Inicio"  class="form-contol" placeholder="H:M AM/FM" data-size="small" style="width:35%" onchange="restarHoras(vl_Inicio);" />
+				</div>
+				<!--Fin de Etiqueta 3 y Cunadro de texto 3-->
+
+				<!--Inicio de Etiqueta 4 y Cunadro de texto 4--><!--Se agrego la funcion de suma automatica con onchange="SumarAutomatico(this.value);"-->
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						Fin
+					</label>
+					<!--
+					<input type="text" id="vl_Fin" name="vl_Fin" placeholder="H:M AM/FM" onchange="SumarAutomatico(this.value);" />
+					-->
+					<!--
+					<input type="time" id="vl_Fin" name="vl_Fin"  class="form-contol" placeholder="H:M AM/FM" data-size="small" style="width:35%" onchange="SumarAutomatico(this.value);"/>
+					<span id="MiTotal" style="color:white;"></span>
+					-->
+					<input type="time" id="vl_Fin" name="vl_Fin"  class="form-contol" placeholder="H:M AM/FM" data-size="small" style="width:35%" onchange="restarHoras(vl_Fin);"/>
+					<span id="resta" style="color:red;"></span>
+				</div>
+				<!--Fin de Etiqueta 4 y Cunadro de texto 4-->
+
+				<!--Inicio de Etiqueta 5 y Cunadro de texto 5-->
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						Horas
+					</label>
+					<input type="text" id="vl_TotalHr" name="vl_TotalHr"  class="form-contol" placeholder="Calculando" data-size="small" style="width:35%" />
+				</div>
+				<!--Fin de Etiqueta 5 y Cunadro de texto 5-->
+				
+				<!--Inicio de Etiqueta para salto de espacio-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						.
+					</label>
+				</div>
+				<!--Fin de Etiqueta para salto de espacio-->
+
+				<!--Inicio de Etiqueta 6 y Cunadro de checkbox 6-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						Repone
+					</label>
+					<div class="custom-checkbox custom-checkbox-primary">
+						<input type="checkbox" data-on-text="Si" data-off-text="No" data-on-color="info" data-off-color="warning" id="sw_Pa1T1Opt1_0001" name="sw_Pa1T1Opt1_0001" class="form-control"/>
+						<label for="sw_Pa1T1Opt1__0001"> </label>
+					</div>
+				</div>
+				<!--Fin de Etiqueta 6 y Cunadro de checkbox 6-->
+
+				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						Motivo
+					</label>
+					<textarea name="vl_motivo" id="vl_motivo" placeholder="Escribe Motivo" rows="10" cols="60"></textarea>
+				</div>
+			
+				<!--Inicio de Etiqueta para salto de espacio-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						.
+					</label>
+				</div>
+				<!--Fin de Etiqueta para salto de espacio-->
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<button type="button" class="btn btn-primary" data-size="small" value="Submit" style="width:25%">Crear Permiso </button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--Fin de Contenedor inicial o por default donde van todas etiquetas y cuandros de text------------------------------->
+
+
+
+
+<!--Inicia Funcion para habilitar checkbox pueda agregar los valotes data-on-text y data-off.text y clores-->
+<script>
+	$(function() {
+	       //$('#sw_Pa1T1Opt1_0001').bootstrapToggle('toggle'); funcion basica On/Off
+	  		FLUIGC.switcher.init("[id^='sw_Pa']");	
+	  		FLUIGC.switcher.onChange("[id^='sw_Pa']", function(event, state){
+		});
+
+	})
+  </script>
+  <!--Fin Funcion para habilitar checkbox pueda agregar los valotes data-on-text y data-off.text y clores-->
+
+<!--Segmento de Codigo para imprimir fecha en cuadro de texto seleccionado-->
+<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+	<script>
+		var inpDate = new Date();
+		var dia = inpDate.getDate();
+		var mes = inpDate.getMonth()+1;
+		var yy = inpDate.getFullYear();
+		if(dia<10) {
+			 dia='0'+dia;
+		}
+			inpDate = dia + '/' +mes+ '/' + yy;
+		//document.write (inpDate);
+		$("#vl_fec").val(inpDate);
+	</script>
+</div>
+
+<!--Inicio de Funcion para ejecutar suma Automatica -->
+<script type="text/javascript">
+	/* Funcion suma. */
+	function SumarAutomatico (valor) {
+		var TotalSuma = 0;  
+		valor = parseInt(valor); // Convertir a numero entero (número).
+		TotalSuma = document.getElementById('MiTotal').innerHTML;
+		// Valida y pone en cero "0".
+		TotalSuma = (TotalSuma == null || TotalSuma == undefined || TotalSuma == "") ? 0 : TotalSuma;
+		/* Variable genrando la suma. */
+		TotalSuma = (parseInt(TotalSuma) + parseInt(valor));
+		// Escribir el resultado en una etiqueta "span".
+		document.getElementById('MiTotal').innerHTML = TotalSuma;
+		$("#vl_TotalHr").val(TotalSuma);
+	}
+	</script>
+<!--Fin de Funcion para ejecutar suma Automatica -->
+
+
+
+
+
+
+</form>
+</div>
+</body>
+</html>
